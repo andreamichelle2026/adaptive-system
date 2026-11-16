@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.amcm</groupId>
+        <artifactId>adaptive-system</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>launcher</artifactId>
+    <name>launcher</name>
+    <dependencies>
+        <dependency><groupId>com.amcm</groupId><artifactId>adaptive-core</artifactId></dependency>
+        <dependency><groupId>com.amcm</groupId><artifactId>persistence</artifactId></dependency>
+        <!-- Los plugins NO se importan en el codigo: se cargan por reflection en tiempo de ejecucion -->
+        <dependency><groupId>com.amcm</groupId><artifactId>plugins-java</artifactId><scope>runtime</scope></dependency>
+        <dependency><groupId>com.amcm</groupId><artifactId>plugins-scala</artifactId><scope>runtime</scope></dependency>
+        <dependency><groupId>com.h2database</groupId><artifactId>h2</artifactId><scope>runtime</scope></dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.amcm.evaluadordecuestionarios.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

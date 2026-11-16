@@ -1,0 +1,5 @@
+target/
+evaluador-db*
+*.class
+.idea/
+nbproject/private/
